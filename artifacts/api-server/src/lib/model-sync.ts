@@ -42,6 +42,7 @@ const OPENAI_STATIC: SyncedModel[] = [
 ];
 
 const ANTHROPIC_STATIC: SyncedModel[] = [
+  { id: "claude-opus-4-7",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.7" },
   { id: "claude-opus-4-6",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.6" },
   { id: "claude-opus-4-5",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.5" },
   { id: "claude-opus-4-1",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.1" },

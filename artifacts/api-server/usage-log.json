@@ -17,3 +17,4 @@
 {"timestamp":1776741021612,"model":"gemini-2.5-flash","provider":"gemini","promptTokens":1,"completionTokens":10,"totalTokens":11,"latencyMs":835,"cached":false}
 {"timestamp":1776741025045,"model":"gemini-3.1-pro-preview","provider":"gemini","promptTokens":1,"completionTokens":9,"totalTokens":10,"latencyMs":3382,"cached":false}
 {"timestamp":1776741027118,"model":"deepseek/deepseek-chat-v3-0324","provider":"openrouter","promptTokens":4,"completionTokens":5,"totalTokens":9,"latencyMs":2018,"cached":false}
+{"timestamp":1776741158452,"model":"claude-opus-4-7","provider":"anthropic","promptTokens":14,"completionTokens":10,"totalTokens":24,"latencyMs":971,"cached":false}
