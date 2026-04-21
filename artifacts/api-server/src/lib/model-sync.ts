@@ -42,33 +42,19 @@ const OPENAI_STATIC: SyncedModel[] = [
 ];
 
 const ANTHROPIC_STATIC: SyncedModel[] = [
-  { id: "claude-opus-4-5",            provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.5" },
-  { id: "claude-sonnet-4-5",          provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Sonnet 4.5" },
-  { id: "claude-haiku-4-5",           provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Haiku 4.5" },
-  { id: "claude-3-7-sonnet-20250219", provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3.7 Sonnet" },
-  { id: "claude-3-5-sonnet-20241022", provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3.5 Sonnet (Oct 2024)" },
-  { id: "claude-3-5-sonnet-20240620", provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3.5 Sonnet (Jun 2024)" },
-  { id: "claude-3-5-haiku-20241022",  provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3.5 Haiku" },
-  { id: "claude-3-opus-20240229",     provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3 Opus" },
-  { id: "claude-3-sonnet-20240229",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3 Sonnet" },
-  { id: "claude-3-haiku-20240307",    provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 3 Haiku" },
-  { id: "claude-2.1",                 provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude 2.1" },
-  { id: "claude-2.0",                 provider: "anthropic", ownedBy: "anthropic", contextLength: 100_000, name: "Claude 2.0" },
+  { id: "claude-opus-4-6",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.6" },
+  { id: "claude-opus-4-5",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.5" },
+  { id: "claude-opus-4-1",   provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Opus 4.1" },
+  { id: "claude-sonnet-4-6", provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Sonnet 4.6" },
+  { id: "claude-sonnet-4-5", provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Sonnet 4.5" },
+  { id: "claude-haiku-4-5",  provider: "anthropic", ownedBy: "anthropic", contextLength: 200_000, name: "Claude Haiku 4.5" },
 ];
 
 const GEMINI_STATIC: SyncedModel[] = [
-  { id: "gemini-2.5-pro-preview-05-06",   provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.5 Pro Preview" },
-  { id: "gemini-2.5-pro-exp-03-25",       provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.5 Pro Exp" },
-  { id: "gemini-2.5-flash-preview-04-17", provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.5 Flash Preview" },
-  { id: "gemini-2.5-pro",                 provider: "gemini", ownedBy: "gemini", contextLength: 2_000_000, name: "Gemini 2.5 Pro" },
-  { id: "gemini-2.5-flash",               provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.5 Flash" },
-  { id: "gemini-2.0-flash",               provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.0 Flash" },
-  { id: "gemini-2.0-flash-lite",          provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.0 Flash-Lite" },
-  { id: "gemini-2.0-flash-thinking-exp",  provider: "gemini", ownedBy: "gemini", contextLength: 32_767,    name: "Gemini 2.0 Flash Thinking" },
-  { id: "gemini-1.5-pro-002",             provider: "gemini", ownedBy: "gemini", contextLength: 2_000_000, name: "Gemini 1.5 Pro 002" },
-  { id: "gemini-1.5-flash-002",           provider: "gemini", ownedBy: "gemini", contextLength: 1_000_000, name: "Gemini 1.5 Flash 002" },
-  { id: "gemini-1.5-flash-8b",            provider: "gemini", ownedBy: "gemini", contextLength: 1_000_000, name: "Gemini 1.5 Flash 8B" },
-  { id: "gemini-1.0-pro",                 provider: "gemini", ownedBy: "gemini", contextLength: 32_760,    name: "Gemini 1.0 Pro" },
+  { id: "gemini-3.1-pro-preview", provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 3.1 Pro Preview" },
+  { id: "gemini-3-flash-preview", provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 3 Flash Preview" },
+  { id: "gemini-2.5-pro",         provider: "gemini", ownedBy: "gemini", contextLength: 2_000_000, name: "Gemini 2.5 Pro" },
+  { id: "gemini-2.5-flash",       provider: "gemini", ownedBy: "gemini", contextLength: 1_048_576, name: "Gemini 2.5 Flash" },
 ];
 
 // Fix 1: Pre-populate cache with static data immediately — never null at startup
