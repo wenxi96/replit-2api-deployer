@@ -64,7 +64,6 @@ let _cache: SyncCache = {
     { provider: "openai",    models: OPENAI_STATIC,    ok: true, source: "static", fetchedAt: Date.now() },
     { provider: "anthropic", models: ANTHROPIC_STATIC, ok: true, source: "static", fetchedAt: Date.now() },
     { provider: "gemini",    models: GEMINI_STATIC,    ok: true, source: "static", fetchedAt: Date.now() },
-    { provider: "openrouter", models: [],              ok: true, source: "static", fetchedAt: Date.now() },
   ],
   syncedAt: Date.now(),
 };
@@ -199,10 +198,9 @@ export async function syncAllModels(): Promise<SyncCache> {
     fetchOpenAIModels(),
     fetchAnthropicModels(),
     fetchGeminiModels(),
-    fetchOpenRouterModels(),
   ]);
 
-  const providers = ["openai", "anthropic", "gemini", "openrouter"] as const;
+  const providers = ["openai", "anthropic", "gemini"] as const;
   const results: ProviderSyncResult[] = settled.map((r, i) => {
     if (r.status === "fulfilled") return r.value;
     // Fix 2: on unexpected rejection, use the provider's static fallback
@@ -210,7 +208,6 @@ export async function syncAllModels(): Promise<SyncCache> {
       openai: OPENAI_STATIC,
       anthropic: ANTHROPIC_STATIC,
       gemini: GEMINI_STATIC,
-      openrouter: [],
     };
     return {
       provider: providers[i],
@@ -229,7 +226,6 @@ export async function syncAllModels(): Promise<SyncCache> {
       openai: OPENAI_STATIC,
       anthropic: ANTHROPIC_STATIC,
       gemini: GEMINI_STATIC,
-      openrouter: [],
     };
     return { ...r, models: staticFallbacks[r.provider] ?? [], source: "static" as const };
   });

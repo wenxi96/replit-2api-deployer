@@ -60,22 +60,6 @@ export const PROXY_MODEL_CATALOG: ProxyModelDefinition[] = [
   { id: "gemini-3-flash-preview", provider: "gemini", ownedBy: "gemini", routes: ["/v1/chat/completions", "/v1/messages"], thinking: GEMINI_THINKING, vision: WITH_VISION },
   { id: "gemini-2.5-pro", provider: "gemini", ownedBy: "gemini", routes: ["/v1/chat/completions", "/v1/messages"], thinking: GEMINI_THINKING, vision: WITH_VISION },
   { id: "gemini-2.5-flash", provider: "gemini", ownedBy: "gemini", routes: ["/v1/chat/completions", "/v1/messages"], thinking: GEMINI_THINKING, vision: WITH_VISION },
-  { id: "meta-llama/llama-4-maverick", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: WITH_VISION },
-  { id: "meta-llama/llama-4-scout", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: WITH_VISION },
-  { id: "meta-llama/llama-3.3-70b-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "meta-llama/llama-3.1-8b-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "deepseek/deepseek-r1", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "deepseek/deepseek-chat-v3-0324", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "x-ai/grok-3", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "x-ai/grok-3-mini", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "mistralai/mistral-large-2411", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "mistralai/mistral-small-3.1-24b-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: WITH_VISION },
-  { id: "mistralai/codestral-2501", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "qwen/qwen3-235b-a22b", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "qwen/qwen-2.5-72b-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "microsoft/phi-4", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
-  { id: "microsoft/phi-4-multimodal-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: WITH_VISION },
-  { id: "nvidia/llama-3.1-nemotron-70b-instruct", provider: "openrouter", ownedBy: "openrouter", routes: ["/v1/chat/completions"], thinking: NO_THINKING, vision: NO_VISION },
 ];
 
 function normalizeCatalogModelId(model: string): string {
