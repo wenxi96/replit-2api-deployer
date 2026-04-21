@@ -2,7 +2,9 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+pnpm workspace monorepo using TypeScript. This project is the **replit-2api-Deployer** — an OpenAI/Anthropic-compatible API proxy that forwards requests to OpenAI / Anthropic / Gemini through Replit AI Integrations.
+
+**For deployment & re-use by another agent, read `README.md` first.** It contains the full step-by-step deployment SOP, environment requirements, model catalog, and troubleshooting playbook.
 
 ## Stack
 
