@@ -20,7 +20,7 @@ pnpm monorepo，包含 3 个 artifact：
 - `artifacts/api-server/src/routes/proxy.ts` — `/v1/chat/completions`、`/v1/messages`、`/v1/responses`、`/v1/models` 实现
 - `artifacts/api-server/src/lib/model-sync.ts` — 启动时同步上游模型清单 + 静态 fallback
 - `artifacts/api-server/src/lib/model-catalog.ts` — 模型路由能力表（思考模式、视觉支持）
-- `artifacts/api-server/src/lib/config.ts` — 配置加载，默认 `PROXY_API_KEY=admin999`
+- `artifacts/api-server/src/lib/config.ts` — 配置加载，默认 `PROXY_API_KEY=920293630`
 - `artifacts/api-server/.replit-artifact/artifact.toml` — `paths = ["/api", "/v1"]`，端口 8080
 - `artifacts/api-portal/.replit-artifact/artifact.toml` — `previewPath = "/"`，端口 24927
 
@@ -59,7 +59,7 @@ pnpm monorepo，包含 3 个 artifact：
 |---|---|
 | `SESSION_SECRET` | 任意随机字符串（例如 `my-secret-2025`） |
 
-> 不需要设 `PROXY_API_KEY`，已经在 `artifacts/api-server/config.json` 里默认 `admin999`。
+> 不需要设 `PROXY_API_KEY` 和 `PORTAL_PASSWORD`，已经在 `artifacts/api-server/src/lib/config.ts` 里默认 `920293630`。如需自定义可在 Secrets 里覆盖。
 
 ### Step 4 · 安装依赖
 
@@ -88,21 +88,21 @@ cat artifacts/api-server/.replit-artifact/artifact.toml | grep paths
 
 ```bash
 # 1. 模型列表必须返回 JSON（不能是 HTML）
-curl -s http://localhost:80/v1/models -H "Authorization: Bearer admin999" | head -c 300
+curl -s http://localhost:80/v1/models -H "Authorization: Bearer 920293630" | head -c 300
 
 # 2. OpenAI 通道
 curl -s -X POST http://localhost:80/v1/chat/completions \
-  -H "Authorization: Bearer admin999" -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 920293630" -H "Content-Type: application/json" \
   -d '{"model":"gpt-4o-mini","messages":[{"role":"user","content":"hi"}],"max_tokens":5}'
 
 # 3. Anthropic 通道
 curl -s -X POST http://localhost:80/v1/chat/completions \
-  -H "Authorization: Bearer admin999" -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 920293630" -H "Content-Type: application/json" \
   -d '{"model":"claude-haiku-4-5","messages":[{"role":"user","content":"hi"}],"max_tokens":5}'
 
 # 4. Gemini 通道
 curl -s -X POST http://localhost:80/v1/chat/completions \
-  -H "Authorization: Bearer admin999" -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 920293630" -H "Content-Type: application/json" \
   -d '{"model":"gemini-2.5-flash","messages":[{"role":"user","content":"hi"}],"max_tokens":5}'
 ```
 
@@ -137,12 +137,12 @@ curl -s -X POST http://localhost:80/v1/chat/completions \
 
 ## 四、客户端使用示例
 
-部署完成后任意域名 + `admin999` 即可使用：
+部署完成后任意域名 + `920293630` 即可使用：
 
 **OpenAI 兼容（chat completions）**
 ```bash
 curl https://你的域名.replit.app/v1/chat/completions \
-  -H "Authorization: Bearer admin999" \
+  -H "Authorization: Bearer 920293630" \
   -H "Content-Type: application/json" \
   -d '{"model":"claude-opus-4-7","messages":[{"role":"user","content":"hi"}]}'
 ```
@@ -150,7 +150,7 @@ curl https://你的域名.replit.app/v1/chat/completions \
 **Anthropic 原生（messages）**
 ```bash
 curl https://你的域名.replit.app/v1/messages \
-  -H "x-api-key: admin999" \
+  -H "x-api-key: 920293630" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{"model":"claude-opus-4-7","max_tokens":100,"messages":[{"role":"user","content":"hi"}]}'
@@ -159,11 +159,11 @@ curl https://你的域名.replit.app/v1/messages \
 **让 claude-cli 直接连本服务**
 ```bash
 export ANTHROPIC_BASE_URL="https://你的域名.replit.app"
-export ANTHROPIC_AUTH_TOKEN="admin999"
+export ANTHROPIC_AUTH_TOKEN="920293630"
 claude
 ```
 
-**前端门户**：`https://你的域名.replit.app/` — 默认登录密码 `admin999`
+**前端门户**：`https://你的域名.replit.app/` — 默认登录密码 `920293630`
 
 ---
 
